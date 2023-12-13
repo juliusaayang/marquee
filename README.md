@@ -9,7 +9,7 @@ every round.
 This is a minimalistic example:
 
 ```dart
-Marquee(
+Marquee([marquee.dart](lib%2Fmarquee.dart)
   text: 'There once was a boy who told this story about a boy: "',
 )
 ```

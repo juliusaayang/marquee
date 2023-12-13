@@ -26,9 +26,7 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () => setState(() => _useRtlText = !_useRtlText),
-          label: !_useRtlText
-              ? const Text('Switch to Hebrew')
-              : const Text('החלף לאנגלית'),
+          label: !_useRtlText ? const Text('Switch to Hebrew') : const Text('החלף לאנגלית'),
           backgroundColor: Colors.pink,
         ),
       ),
@@ -38,9 +36,11 @@ class _MyAppState extends State<MyApp> {
   Widget _buildMarquee() {
     return Marquee(
       key: Key("$_useRtlText"),
-      text: !_useRtlText
-          ? 'There once was a boy who told this story about a boy: "'
-          : 'פעם היה ילד אשר סיפר סיפור על ילד:"',
+      text: ['Some sample text that takes some space.', 'זהו משפט ראשון של הטקסט הארוך. זהו המשפט השני של הטקסט הארוך'],
+      style: [
+        TextStyle(fontWeight: FontWeight.bold),
+        TextStyle(fontWeight: FontWeight.bold),
+      ],
       velocity: 50.0,
     );
   }
@@ -48,10 +48,11 @@ class _MyAppState extends State<MyApp> {
   Widget _buildComplexMarquee() {
     return Marquee(
       key: Key("$_useRtlText"),
-      text: !_useRtlText
-          ? 'Some sample text that takes some space.'
-          : 'זהו משפט ראשון של הטקסט הארוך. זהו המשפט השני של הטקסט הארוך',
-      style: TextStyle(fontWeight: FontWeight.bold),
+      text: ['Some sample text that takes some space.', 'זהו משפט ראשון של הטקסט הארוך. זהו המשפט השני של הטקסט הארוך'],
+      style: [
+        TextStyle(fontWeight: FontWeight.bold),
+        TextStyle(fontWeight: FontWeight.bold),
+      ],
       scrollAxis: Axis.horizontal,
       crossAxisAlignment: CrossAxisAlignment.start,
       blankSpace: 20,
