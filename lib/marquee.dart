@@ -732,8 +732,8 @@ class _MarqueeState extends State<Marquee> with SingleTickerProviderStateMixin {
         final span = TextSpan(
           children: List.generate(
             widget.text.length,
-                (index) => TextSpan(
-              text: widget.text[index],
+            (index) => TextSpan(
+              text: '${widget.text[index]} ${widget.text[index] == widget.text.last ? '' : ' | '}',
               style: widget.style[index],
             ),
           ),
